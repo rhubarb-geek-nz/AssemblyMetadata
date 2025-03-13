@@ -3,15 +3,15 @@
 
 namespace RhubarbGeekNz.AssemblyMetadata
 {
-	public enum TestEnum
-	{
-		Foo,
-		Bar
-	}
+    public enum TestEnum
+    {
+        Foo,
+        Bar
+    }
 
     public class TestModule
     {
-		public const string Message = "Hello World";
-		public const int TheAnswer = 42;
+        public const string Message = "Hello World";
+        public const int TheAnswer = 42;
     }
 }
