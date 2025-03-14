@@ -31,9 +31,23 @@ Import-AssemblyMetadata -LiteralPath $dll | ForEach-Object {
 			$_.GetFields() | ForEach-Object {
 				if ($_.IsLiteral)
 				{
+					$value = $_.GetRawConstantValue()
+					if ($_.FieldType.IsEnum)
+					{
+						$i = 0
+						foreach ($v in $_.FieldType.GetEnumValuesAsUnderlyingType())
+						{
+							if ($value -eq $v)
+							{
+								$value = $_.FieldType.GetEnumNames()[$i]
+								break
+							}
+							$i++
+						}
+					}
 					[pscustomobject]@{
 						Name = $_.Name
-						Value = $_.GetRawConstantValue()
+						Value = $value
 						Attributes = $_.Attributes
 					}
 				}
