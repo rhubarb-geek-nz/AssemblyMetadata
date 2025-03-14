@@ -32,4 +32,7 @@ Name      Value                                Attributes
 TestEnum  Foo, Bar                         Public, Sealed
 Message   Hello World Public, Static, Literal, HasDefault
 TheAnswer 42          Public, Static, Literal, HasDefault
+MyEnum    1           Public, Static, Literal, HasDefault
+PI        3.142       Public, Static, Literal, HasDefault
+TheTruth  True        Public, Static, Literal, HasDefault
 ```
