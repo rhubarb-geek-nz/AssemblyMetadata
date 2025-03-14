@@ -12,9 +12,16 @@ Import-AssemblyMetadata -LiteralPath $dll | ForEach-Object {
 	$_.GetTypes() | ForEach-Object {
 		if ($_.IsEnum)
 		{
+			$i = 0
+			$values = @()
+			$names = $_.GetEnumNames()
+			foreach ($value in $_.GetEnumValuesAsUnderlyingType())
+			{
+				$values += $names[$i] + '=' + $value
+			}
 			[pscustomobject]@{
 				Name = $_.Name
-				Value = $_.GetEnumNames() | Join-String -Separator ', '
+				Value = $values | Join-String -Separator ', '
 				Attributes = $_.Attributes
 			}
 		}

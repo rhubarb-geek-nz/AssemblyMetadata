@@ -1,10 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <AssemblyName>RhubarbGeekNz.AssemblyMetadata</AssemblyName>
     <Copyright>Copyright &#169; 2025 Roger Brown</Copyright>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <AssemblyTitle>PowerShell Cmdlet for AssemblyMetadata</AssemblyTitle>
     <Product>AssemblyMetadata for PowerShell</Product>
     <Company>rhubarb-geek-nz</Company>
