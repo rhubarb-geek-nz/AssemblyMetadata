@@ -8,13 +8,14 @@ dotnet publish TestModule/TestModule.csproj --configuration Release
 
 $dll = 'TestModule/bin/Release/netstandard2.0/publish/TestModule.dll'
 
-Get-Content -LiteralPath $dll -AsByteStream -Raw | Import-AssemblyMetadata | ForEach-Object {
+Import-AssemblyMetadata -LiteralPath $dll | ForEach-Object {
 	$_.GetTypes() | ForEach-Object {
 		if ($_.IsEnum)
 		{
 			[pscustomobject]@{
 				Name = $_.Name
-				Value = $_.GetEnumNames()
+				Value = $_.GetEnumNames() | Join-String -Separator ', '
+				Attributes = $_.Attributes
 			}
 		}
 		else
@@ -25,6 +26,7 @@ Get-Content -LiteralPath $dll -AsByteStream -Raw | Import-AssemblyMetadata | For
 					[pscustomobject]@{
 						Name = $_.Name
 						Value = $_.GetRawConstantValue()
+						Attributes = $_.Attributes
 					}
 				}
 			}

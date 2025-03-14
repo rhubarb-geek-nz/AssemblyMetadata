@@ -22,14 +22,14 @@ Run the [test.ps1](test.ps1) to confirm it works.
 
 ```
 $ pwsh test.ps1
-Restore complete (2.3s)
-  TestModule succeeded (1.3s) → TestModule/bin/Release/netstandard2.0/publish/
+Restore complete (0.2s)
+  TestModule succeeded (0.1s) ? TestModule\bin\Release\netstandard2.0\publish\
 
-Build succeeded in 5.4s
+Build succeeded in 0.7s
 
-Name      Value
-----      -----
-TestEnum  {Foo, Bar}
-Message   Hello World
-TheAnswer 42
+Name      Value                                Attributes
+----      -----                                ----------
+TestEnum  Foo, Bar                         Public, Sealed
+Message   Hello World Public, Static, Literal, HasDefault
+TheAnswer 42          Public, Static, Literal, HasDefault
 ```
