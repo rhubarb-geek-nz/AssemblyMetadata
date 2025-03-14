@@ -18,6 +18,7 @@ Import-AssemblyMetadata -LiteralPath $dll | ForEach-Object {
 			foreach ($value in $_.GetEnumValuesAsUnderlyingType())
 			{
 				$values += $names[$i] + '=' + $value
+				$i++
 			}
 			[pscustomobject]@{
 				Name = $_.Name
