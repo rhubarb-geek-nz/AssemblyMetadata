@@ -33,7 +33,10 @@ namespace RhubarbGeekNz.AssemblyMetadata
 
             if (ReferencedAssemblies != null)
             {
-                list.AddRange(ReferencedAssemblies);
+                foreach (string path in ReferencedAssemblies)
+                {
+                    list.Add(GetUnresolvedProviderPathFromPSPath(path));
+                }
             }
             else
             {
@@ -68,7 +71,7 @@ namespace RhubarbGeekNz.AssemblyMetadata
                     {
                         foreach (string literalPath in LiteralPath)
                         {
-                            WriteObject(mlc.LoadFromAssemblyPath(literalPath));
+                            WriteObject(mlc.LoadFromAssemblyPath(GetUnresolvedProviderPathFromPSPath(literalPath)));
                         }
                     }
 
