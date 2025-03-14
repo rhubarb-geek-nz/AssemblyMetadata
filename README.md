@@ -27,12 +27,15 @@ Restore complete (0.2s)
 
 Build succeeded in 0.7s
 
-Name      Value                                 Attributes
-----      -----                                 ----------
-TestEnum  Foo=0, Bar=1                      Public, Sealed
-Message   Hello World  Public, Static, Literal, HasDefault
-TheAnswer 42           Public, Static, Literal, HasDefault
-MyEnum    Bar          Public, Static, Literal, HasDefault
-PI        3.142        Public, Static, Literal, HasDefault
-TheTruth  True         Public, Static, Literal, HasDefault
+Name         Value                                               Attributes
+----         -----                                               ----------
+SimpleEnum   Foo, Bar                                        Public, Sealed
+FlaggedEnum  None=0, Foo=16, Bar=32                          Public, Sealed
+OutOfOrder   None=0, Two=2, Four=4                           Public, Sealed
+Message      Hello World                Public, Static, Literal, HasDefault
+TheAnswer    42                         Public, Static, Literal, HasDefault
+MyEnum       Bar                        Public, Static, Literal, HasDefault
+MyPI         3.14                       Public, Static, Literal, HasDefault
+TheTruth     True                       Public, Static, Literal, HasDefault
+MyAttributes Public, Static, HasDefault Public, Static, Literal, HasDefault
 ```
