@@ -23,7 +23,7 @@ Run the [test.ps1](test.ps1) to confirm it works.
 ```
 $ pwsh test.ps1
 Restore complete (0.2s)
-  TestModule succeeded (0.1s) ? TestModule\bin\Release\netstandard2.0\publish\
+  TestModule succeeded (0.1s) → TestModule\bin\Release\netstandard2.0\publish\
 
 Build succeeded in 0.7s
 
