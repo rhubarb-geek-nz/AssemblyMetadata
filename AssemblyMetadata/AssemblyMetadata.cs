@@ -16,7 +16,7 @@ namespace RhubarbGeekNz.AssemblyMetadata
     public class ImportAssemblyMetadata : PSCmdlet
     {
         [Parameter(Mandatory = false)]
-        public string [] ReferencedAssemblies;
+        public string[] ReferencedAssemblies;
 
         [Parameter(Mandatory = true, ParameterSetName = "path", Position = 0)]
         public string[] Path;
@@ -85,6 +85,19 @@ namespace RhubarbGeekNz.AssemblyMetadata
                     WriteError(new ErrorRecord(ex, ex.GetType().Name, ErrorCategory.MetadataError, null));
                 }
             }
+        }
+    }
+
+    [Cmdlet(VerbsCommon.New, "MetadataLoadContext")]
+    [OutputType(typeof(MetadataLoadContext))]
+    public class NewMetadataLoadContext : PSCmdlet
+    {
+        [Parameter(Mandatory = false)]
+        public string[] ReferencedAssemblies;
+
+        protected override void ProcessRecord()
+        {
+            WriteObject(new MetadataLoadContext(ReferencedAssemblies == null ? Directory.GetFiles(RuntimeEnvironment.GetRuntimeDirectory(), "*.dll") : ReferencedAssemblies));
         }
     }
 

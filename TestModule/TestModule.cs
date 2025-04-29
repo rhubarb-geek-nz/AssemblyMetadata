@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 
 using System;
+using System.IO;
 using System.Reflection;
 
 namespace RhubarbGeekNz.AssemblyMetadata
@@ -35,5 +36,6 @@ namespace RhubarbGeekNz.AssemblyMetadata
         public const double MyPI = System.Math.PI;
         public const bool TheTruth = true;
         public const FieldAttributes MyAttributes = FieldAttributes.Public | FieldAttributes.Static | FieldAttributes.HasDefault;
+        public const FileAttributes MyFiles = FileAttributes.SparseFile | FileAttributes.Archive | FileAttributes.ReadOnly;
     }
 }
